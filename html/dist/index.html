@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XS • Kết quả xổ số</title>
+    <link rel="stylesheet" href="css/lib.min.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body class="site-body">
+    <header class="site-header">
+      <div class="site-header__container">
+        <button class="site-header__mobile-icon" id="header_trigger"></button>
+        <nav class="site-header__nav max-lg:hidden" id="header_nav"><a class="site-header__nav_link active" href="#trang_chu">Trang chủ</a>
+          <div class="btn--dropdown active"></div><a class="site-header__nav_link" href="#bai_viet">Bài viết</a>
+          <div class="btn--dropdown">
+                <div class="dropdown__trigger nav__link"><a class="dropdown__label" href="#" aria-label="Go to thống kê" role="link">thống kê</a><span class="dropdown__indicator"></span></div>
+                <ul class="dropdown__list hidden dropdown__list--at-left">
+                  <li class="dropdown__item"><a href="#" aria-label="Go to Sài Gòn" role="link">Sài Gòn</a></li>
+                  <li class="dropdown__item"><a href="#" aria-label="Go to Đà Nẵng" role="link">Đà Nẵng</a></li>
+                  <li class="dropdown__item"><a href="#" aria-label="Go to Hà Nội" role="link">Hà Nội</a></li>
+                </ul>
+          </div><a class="site-header__nav_link" href="#calendar">Lịch vạn niên</a><a class="site-header__nav_link" href="#calendar">Sổ mơ</a>
+        </nav>
+        <button class="site-header__mobile-icon" id="header_qr"></button>
+        <div class="site-header__action" id="header_action"><a class="site-header__action_main" href="#do-ve-so">Quét vé số để dò</a>
+          <button class="site-header__action_btn" id="open_search_modal" aria-label="Tìm kiếm"></button>
+        </div>
+        <form class="site-header__search max-lg:hidden" id="header_search">
+          <input type="text" placeholder="Nhập nội dung tìm kiếm">
+          <button aria-label="Tìm kiếm" type="submit"></button>
+        </form>
+      </div>
+    </header>
+    <div class="site-main">
+      <div>test</div>
+    </div>
+    <footer class="site-footer"><span class="site-footer__line"></span>
+      <div class="site-footer__links">
+        <div class="site-footer__links_column">
+          <p class="site-footer__links_title">Cập nhật mới</p>
+          <ul class="site-footer__links_list">
+                <li><a class="site-footer__links_link" href="#co_gi_moi"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Có gì mới hôm nay?</span></a></li>
+                <li><a class="site-footer__links_link" href="#huong_dan_in_ve_do"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Hướng dẫn in vé dò</span></a></li>
+                <li><a class="site-footer__links_link" href="#cach_luu_anh_ve_do"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Cách lưu ảnh vé dò</span></a></li>
+                <li><a class="site-footer__links_link" href="#huong_dan_ve_thue"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Hướng dẫn về thuế</span></a></li>
+          </ul>
+        </div>
+        <div class="site-footer__links_column">
+          <p class="site-footer__links_title">Kết quả xổ số</p>
+          <ul class="site-footer__links_list">
+                <li><a class="site-footer__links_link" href="#do_ve_so_online"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Dò vé số online</span></a></li>
+                <li><a class="site-footer__links_link" href="#tuong_thuat_truc_tiep"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Tường thuật trực tiếp xổ số</span></a></li>
+                <li><a class="site-footer__links_link" href="#thong_ke_lo"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Thống Kê Lô</span></a></li>
+                <li><a class="site-footer__links_link" href="#kiem_tra_gan_cuc_dai"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Kiểm tra Gan cực Đại</span></a></li>
+                <li><a class="site-footer__links_link" href="#thong_ke_tan_suat"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Thống kê tần suất</span></a></li>
+          </ul>
+        </div>
+        <div class="site-footer__links_column">
+          <p class="site-footer__links_title">Công cụ ông địa</p>
+          <ul class="site-footer__links_list">
+                <li><a class="site-footer__links_link" href="#ai_du_doan"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">AI dự đoán</span></a></li>
+                <li><a class="site-footer__links_link" href="#phan_tich_xac_suat"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Phân tích xác suất</span></a></li>
+                <li><a class="site-footer__links_link" href="#lich_van_nien"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Lịch Vạn Niên</span></a></li>
+                <li><a class="site-footer__links_link" href="#giai_ma_giac_mo"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Giải mã giấc mơ</span></a></li>
+                <li><a class="site-footer__links_link" href="#gieo_que_online"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Gieo quẻ online</span></a></li>
+          </ul>
+        </div>
+        <div class="site-footer__links_column">
+          <p class="site-footer__links_title">Livestream KQXS</p>
+          <ul class="site-footer__links_list">
+                <li><a class="site-footer__links_link" href="#livestream_mien_nam"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Livestream xổ số Miền Nam</span></a></li>
+                <li><a class="site-footer__links_link" href="#livestream_mien_bac"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Livestream xổ số Miền Bắc</span></a></li>
+                <li><a class="site-footer__links_link" href="#livestream_mien_trung"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Livestream xổ số Miền Trung</span></a></li>
+                <li><a class="site-footer__links_link" href="#livestream_vietlott"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Livestream xổ số Vietlott</span></a></li>
+                <li><a class="site-footer__links_link" href="#livestream_dien_toan"><span class="site-footer__links_link_icon"></span><span class="site-footer__links_link_text">Livestream xổ số Điện Toán</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__brand">
+        <div class="site-footer__brand_contents">
+          <p class="site-footer__brand_contents_title">cúng ông địa trúng độc đắc</p>
+          <nav class="site-footer__brand_contents_links"><a href="#dieu_khoan">Điều khoản sử dụng</a><span>|</span><a href="#bao_mat">Chính sách bảo mật</a><span>|</span><a href="#cookies">Cookies</a></nav>
+        </div>
+      </div>
+    </footer>
+    <div class="site-corner">
+      <button class="btn--scroll btn--scroll--up btn--scroll-window--top hidden" aria-label="Scroll up"><span class="btn--scroll__span"></span></button>
+    </div>
+  </body>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/lib.min.js"></script>
+  <script src="js/index.bundle.js"></script>
+</html>

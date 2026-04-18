@@ -1,0 +1,26 @@
+include ../partials/utils/_scroll_button
+
+
+doctype html
+html(lang="vi")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title XS • Kết quả xổ số
+        link(rel="stylesheet" href="css/lib.min.css")
+        block head
+    body(class="site-body")
+        include ../partials/_header
+        div(class="site-main")
+            block content 
+        include ../partials/_footer
+
+        div(class="site-corner")
+            +scrollButton("up", "btn--scroll-window--top hidden", "double_chevron")
+
+
+    script(src="js/jquery-3.7.1.min.js")
+    script(src="js/lib.min.js")
+    block script
+
+

@@ -1,0 +1,57 @@
+mixin footer_link(link = "", text = "")
+  li
+    a(class="site-footer__links_link" href=link)
+      span(class="site-footer__links_link_icon")
+        //- include ../icons/_ic_caret.svg
+      span(class="site-footer__links_link_text")= text
+
+footer(class="site-footer")
+  span(class="site-footer__line")
+  div(class="site-footer__links")
+    div(class="site-footer__links_column")
+      p(class="site-footer__links_title") Cập nhật mới
+      ul(class="site-footer__links_list")
+        +footer_link("#co_gi_moi", "Có gì mới hôm nay?")
+        +footer_link("#huong_dan_in_ve_do", "Hướng dẫn in vé dò")
+        +footer_link("#cach_luu_anh_ve_do", "Cách lưu ảnh vé dò")
+        +footer_link("#huong_dan_ve_thue", "Hướng dẫn về thuế")
+
+    div(class="site-footer__links_column")
+      p(class="site-footer__links_title") Kết quả xổ số
+      ul(class="site-footer__links_list")
+        +footer_link("#do_ve_so_online", "Dò vé số online")
+        +footer_link("#tuong_thuat_truc_tiep", "Tường thuật trực tiếp xổ số")
+        +footer_link("#thong_ke_lo", "Thống Kê Lô")
+        +footer_link("#kiem_tra_gan_cuc_dai", "Kiểm tra Gan cực Đại")
+        +footer_link("#thong_ke_tan_suat", "Thống kê tần suất")
+
+    div(class="site-footer__links_column")
+      p(class="site-footer__links_title") Công cụ ông địa
+      ul(class="site-footer__links_list")
+        +footer_link("#ai_du_doan", "AI dự đoán")
+        +footer_link("#phan_tich_xac_suat", "Phân tích xác suất")
+        +footer_link("#lich_van_nien", "Lịch Vạn Niên")
+        +footer_link("#giai_ma_giac_mo", "Giải mã giấc mơ")
+        +footer_link("#gieo_que_online", "Gieo quẻ online")
+
+    div(class="site-footer__links_column")
+      p(class="site-footer__links_title") Livestream KQXS
+      ul(class="site-footer__links_list")
+        +footer_link("#livestream_mien_nam", "Livestream xổ số Miền Nam")
+        +footer_link("#livestream_mien_bac", "Livestream xổ số Miền Bắc")
+        +footer_link("#livestream_mien_trung", "Livestream xổ số Miền Trung")
+        +footer_link("#livestream_vietlott", "Livestream xổ số Vietlott")
+        +footer_link("#livestream_dien_toan", "Livestream xổ số Điện Toán")
+
+  div(class="site-footer__brand")
+    //- include ./utils/_logo
+
+    div(class="site-footer__brand_contents")
+      p(class="site-footer__brand_contents_title")
+        | cúng ông địa trúng độc đắc
+      nav(class="site-footer__brand_contents_links")
+        a(href="#dieu_khoan") Điều khoản sử dụng
+        span |
+        a(href="#bao_mat") Chính sách bảo mật
+        span |
+        a(href="#cookies") Cookies

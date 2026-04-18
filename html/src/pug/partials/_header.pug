@@ -1,0 +1,35 @@
+include ./utils/_dropdown_links
+
+header(class="site-header")
+  div(class="site-header__container")
+    button#header_trigger(class="site-header__mobile-icon")
+      //- include ../icons/_ic_menu.svg
+      
+    nav#header_nav(class="site-header__nav max-lg:hidden")
+      a(class="site-header__nav_link active" href="#trang_chu") Trang chủ
+      div(class="btn--dropdown active")
+        
+      a(class="site-header__nav_link" href="#bai_viet") Bài viết
+      div(class="btn--dropdown")
+        +dropdownLinks({label: "thống kê"}, [{ label: "Sài Gòn" }, { label: "Đà Nẵng" }, { label: "Hà Nội" }], true)
+      a(class="site-header__nav_link" href="#calendar") Lịch vạn niên
+      a(class="site-header__nav_link" href="#calendar") Sổ mơ
+      
+
+    //- Logo
+    //- include ./utils/_logo
+      
+    button#header_qr(class="site-header__mobile-icon")
+      //- include ../icons/_ic_qr.svg
+
+    div#header_action(class="site-header__action")
+      a(class="site-header__action_main" href="#do-ve-so")
+        | Quét vé số để dò
+      button#open_search_modal(class="site-header__action_btn" aria-label="Tìm kiếm")
+        //- include ../icons/_ic_magnifier.svg
+
+    form#header_search(class="site-header__search max-lg:hidden")
+      input(class="" type="text" placeholder="Nhập nội dung tìm kiếm")
+      button(class="" aria-label="Tìm kiếm" type="submit")
+        //- include ../icons/_ic_magnifier.svg
+

@@ -1,0 +1,338 @@
+/* Container chính */
+.text-editor h1,
+.text-editor h2,
+.text-editor h3,
+.text-editor h4,
+.text-editor h5,
+.text-editor h6,
+.text-editor a,
+.text-editor strong,
+.text-editor b,
+.text-editor span,
+.text-editor ul,
+.text-editor li,
+.text-editor em {
+  color: inherit !important;
+}
+
+.text-editor header,
+.text-editor footer {
+  margin-top: 0.5rem; /* space-y-2 */
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .text-editor header,
+  .text-editor footer {
+    margin-top: 1rem; /* lg:space-y-4 */
+    margin-bottom: 1rem;
+  }
+}
+
+.text-editor section {
+  padding: 1rem; /* p-4 */
+}
+
+.text-editor section article {
+  margin-top: 0.5rem; /* space-y-2 */
+}
+
+@media (min-width: 1024px) {
+  .text-editor section article {
+    margin-top: 1rem; /* lg:space-y-4 */
+  }
+}
+
+/* Headings */
+.text-editor h1 {
+  font-size: 3rem; /* Overriding text-base */
+  font-weight: 800; /* font-extrabold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  text-align: justify;
+  line-height: 1;
+}
+
+@media (min-width: 1024px) {
+  .text-editor h1 {
+    margin-bottom: 1rem; /* lg:mb-4 */
+  }
+}
+
+.text-editor h2 {
+  font-size: 1rem; /* text-base */
+  font-weight: 700; /* font-bold */
+  text-align: justify;
+  margin-top: 0.5rem; /* my-2 */
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .text-editor h2 {
+    font-size: 1.125rem; /* lg:text-lg */
+    margin-top: 1rem; /* lg:my-4 */
+    margin-bottom: 1rem;
+  }
+}
+
+.text-editor h3,
+.text-editor h4,
+.text-editor h5,
+.text-editor h6 {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  text-align: justify;
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+@media (min-width: 1024px) {
+  .text-editor h3,
+  .text-editor h4,
+  .text-editor h5,
+  .text-editor h6 {
+    font-size: 1rem; /* lg:text-base */
+  }
+}
+
+/* Paragraphs */
+.text-editor p {
+  text-align: justify;
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.625; /* leading-relaxed */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+@media (min-width: 1024px) {
+  .text-editor p {
+    font-size: 1rem; /* lg:text-base */
+    margin-bottom: 1rem; /* lg:mb-4 */
+  }
+}
+
+.text-editor strong {
+  font-weight: 700;
+}
+
+.text-editor em {
+  font-style: italic;
+}
+
+.text-editor code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem; /* text-xs */
+}
+
+@media (min-width: 1024px) {
+  .text-editor code {
+    font-size: 0.875rem; /* lg:text-sm */
+  }
+}
+
+.text-editor a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: all 0.2s;
+}
+
+/* Unordered Lists */
+.text-editor ul {
+  list-style: none;
+  padding-left: 1rem; /* pl-4 */
+}
+
+.text-editor ul > li {
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.text-editor ul > li::before {
+  content: "•\2003";
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .text-editor ul {
+    padding-left: 1.5rem; /* lg:pl-6 */
+  }
+  .text-editor ul > li {
+    margin-bottom: 0.5rem; /* lg:mb-2 */
+  }
+}
+
+/* Ordered Lists (Roman, Decimal, Alpha) */
+.text-editor ol {
+  list-style: none;
+  counter-reset: level1;
+  padding-left: 1rem;
+}
+
+.text-editor ol > li {
+  counter-increment: level1;
+  text-align: justify;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.text-editor ol > li::before {
+  content: counter(level1, upper-roman) ".\2003";
+  font-weight: 700;
+}
+
+.text-editor ol ol {
+  counter-reset: level2;
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.text-editor ol ol > li::before {
+  content: counter(level2, decimal) ".\2003";
+  font-weight: 600;
+}
+
+.text-editor ol ol ol {
+  counter-reset: level3;
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.text-editor ol ol ol > li::before {
+  content: counter(level3, lower-alpha) ".\2003";
+}
+
+/* Blockquotes */
+.text-editor blockquote {
+  border-left: 4px solid black;
+  padding-left: 0.75rem;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.text-editor blockquote p {
+  text-align: justify;
+}
+
+.text-editor blockquote footer {
+  margin-top: 0.25rem;
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Media & Images */
+.text-editor figure {
+  margin: 0.5rem 0;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text-editor figure.aligncenter {
+  width: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-editor img {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.text-editor figure figcaption {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Tables */
+.text-editor table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.text-editor th,
+.text-editor td {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0.25rem;
+}
+
+.text-editor thead th {
+  font-weight: 600;
+}
+
+/* Code Blocks & Misc */
+.text-editor pre {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+}
+
+.text-editor hr {
+  border: 0;
+  border-top: 1px solid black;
+  margin: 0.5rem 0;
+}
+
+.text-editor details {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.text-editor summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.text-editor abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+.text-editor del {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.text-editor ins {
+  text-decoration: none;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Thay thế cho gradient-start/30 tùy hệ màu của bạn */
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.text-editor small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.text-editor sub {
+  vertical-align: sub;
+  font-size: 0.75em;
+}
+
+.text-editor sup {
+  vertical-align: super;
+  font-size: 0.75em;
+}
+
+.text-editor u {
+  text-decoration: underline;
+}

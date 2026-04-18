@@ -1,0 +1,15 @@
+mixin dropdownLinks(current = {label: ""}, list = [], listAtLeft = false)
+  //- display
+  div(class="dropdown__trigger nav__link")
+    a(class="dropdown__label" href="#"  aria-label=`Go to ${current.label}` role="link") #{current.label}
+    span(class="dropdown__indicator")
+      //- include ../../icons/_ic_chevron.svg
+
+  //- dropdown
+  ul(class=`dropdown__list hidden ${listAtLeft ? 'dropdown__list--at-left' : ''}`)
+    each item in list
+      li(class="dropdown__item")
+        a(href="#" aria-label=`Go to ${item.label}` role="link") #{item.label}
+
+
+    

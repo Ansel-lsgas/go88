@@ -1,0 +1,18 @@
+mixin dropdown(current = {label: "", value:""}, list = [], listAtLeft = false, hasSearch, searchId, placeholder)
+    //- display
+    div(class="dropdown__trigger" data-value=current.value)
+        span(class="dropdown__label") #{current.label}
+        span(class="dropdown__indicator")
+            //- include ../../icons/_ic_chevron.svg
+
+    //- dropdown
+    ul(class=`dropdown__list hidden ${listAtLeft ? 'dropdown__list--at-left' : ''}`)
+        if hasSearch 
+            li(class="dropdown__search")
+                input(id=searchId type="text" placeholder=placeholder autocomplete="off")
+
+        each item in list
+            li(class="dropdown__item" data-value=item.value) #{item.label}
+
+
+

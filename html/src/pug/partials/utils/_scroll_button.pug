@@ -1,0 +1,14 @@
+mixin scrollButton(direction, customClass = "", icon = "chevron" || "double_chevron")
+    - direction = (direction === "up" || direction === "down" || direction === "right" || direction === "left") ? direction : "left"
+    button(class=`btn--scroll btn--scroll--${direction} ${customClass}` aria-label=`Scroll ${direction}` data-controlled-scroll-id=scrollId)
+        span(class="btn--scroll__span")
+            case icon
+                when "double_chevron"
+                    //- include ../../icons/_ic_double_chevron.svg
+                default
+                    //- include ../../icons/_ic_chevron.svg
+
+
+
+
+
