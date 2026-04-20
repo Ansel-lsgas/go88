@@ -2,4 +2,32 @@
 
 
 
-// @layer components
+@layer components
+    .hero-section
+        @apply flex-container relative flex-col gap-3
+        video
+            @apply lg:hidden object-contain w-full
+        &__container
+            @apply max-lg:hidden
+            .swiper-pagination 
+                @apply space-x-2.5
+                .swiper-pagination-bullet
+                    @apply py-4 size-fit
+                    .child
+                        @apply w-10 h-1 rounded-full bg-gray-3 flex
+                    &.swiper-pagination-bullet-active
+                        @apply bg-transparent
+                        .child
+                            @apply bg-golden
+        &__slide
+            @apply flex-container relative
+            &::before
+                @apply content-[''] left-0 top-0 absolute size-full bg-hero
+        &__headline
+            @apply max-w-lmt lg:h-0 w-full px-5 flex lg:absolute z-[90] select-none
+            &_container 
+                @apply w-full flex-container lg:w-max lg:max-w-534px lg:gap-2.5 flex-col
+            &_title
+                @apply text-2xl lg:text-4xl font-extrabold max-lg:text-center
+            &_description
+                @apply text-xs lg:text-base font-semibold max-lg:text-center

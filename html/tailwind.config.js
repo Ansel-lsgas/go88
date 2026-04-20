@@ -72,6 +72,7 @@ module.exports = {
         popup:
           "linear-gradient(180deg, rgba(127, 127, 127, 0.20) 0%, rgba(0, 0, 0, 0.20) 54.19%, rgba(244, 181, 22, 0.20) 100%)",
         line: "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #F4B516 50%, rgba(0, 0, 0, 0) 100%)",
+        hero: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 71.77%, #000 93.19%), linear-gradient(270deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)",
         lang: "url('/assets/lang_frame.webp')",
         main: "url('/assets/bg_main.webp')",
         header: "url('/assets/bg_header.webp')",
@@ -144,8 +145,9 @@ module.exports = {
         "390px": "390px",
         "414px": "414px",
         "430px": "430px",
-        "500px": "500px",
         "444px": "444px",
+        "500px": "500px",
+        "534px": "534px",
         "545px": "545px",
         "648px": "648px",
         "728px": "728px",

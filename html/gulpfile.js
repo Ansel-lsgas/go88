@@ -266,12 +266,12 @@ function webm() {
     .pipe(browserSync.stream());
 }
 
-// function swiperAssets() {
-//   return gulp
-//     .src(["node_modules/swiper/swiper-bundle.min.css"])
-//     .pipe(gulp.dest("dist/vendor/swiper"))
-//     .pipe(browserSync.stream());
-// }
+function swiperAssets() {
+  return gulp
+    .src(["node_modules/swiper/swiper-bundle.min.css"])
+    .pipe(gulp.dest("dist/vendor/swiper"))
+    .pipe(browserSync.stream());
+}
 
 function watch() {
   browserSync.init({
@@ -328,7 +328,7 @@ const build = gulp.series(
     // previewPartials,
     images,
     assets,
-    // swiperAssets,
+    swiperAssets,
     videos,
     webm,
   ),
