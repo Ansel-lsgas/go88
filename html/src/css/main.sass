@@ -47,7 +47,7 @@
     @apply min-h-screen w-full relative lg:gap-2.5 flex flex-col items-center font-mulish
 
   .site-header
-    @apply w-full flex-container transition duration-300
+    @apply w-full flex-container transition duration-300 z-[99]
     &__container
       @apply w-full flex gap-x-6 items-center justify-between lg:justify-center max-w-lmd px-5 max-lg:flex-wrap
     &__mobile-icon, &__pseudo
@@ -118,7 +118,7 @@
           
     &.mobile-open
       @apply fixed h-screen bg-header bg-cover bg-center items-start
-      .site-header__container
+      .site-header__main
         @apply max-lg:flex h-dynamic-nav
       .site-header__mobile-icon
         @apply self-center
@@ -128,23 +128,53 @@
   .site-footer
     @apply rounded-t-10px shadow-popup bg-popup w-full flex-container
     &__container
-      @apply w-full px-5 max-w-lmd flex items-center flex-col gap-3 md:gap-6
+      @apply w-full max-w-lmd flex items-center flex-col gap-5 md:gap-6
     &__main
-      @apply w-full flex max-xl:flex-col items-center gap-x-25 gap-y-3
+      @apply w-full flex max-xl:flex-col items-center gap-x-25 gap-y-5 py-2 md:py-6 px-5
     &__brand
       @apply flex flex-col items-center justify-center max-w-349px
-      .site-logo img
-        @apply h-25 lg:h-152px -mb-2
+      .site-logo 
+        @apply relative flex-container
+        img
+          @apply h-25 lg:h-152px -mb-2
+        &::before
+          @apply max-xl:content-[''] absolute bottom-0 w-full h-1px bg-line
       &_description
-        @apply text-gray-3 text-base font-light text-center
+        @apply max-lg:mt-2 max-xl:mt-4 text-gray-3 text-sm md:text-base font-light text-center
     &__nav
-      @apply grid grid-cols-2 md:grid-cols-4 grow max-xl:w-full gap-x-5 gap-y-3 md:gap-x-6
-    
+      @apply grid grid-cols-2 md:grid-cols-4 grow max-xl:w-full gap-x-5 gap-y-4 md:gap-x-6
+    &__column
+      @apply flex flex-col gap-2.5
+      &_title
+        @apply bg-golden text-gradient text-base/140 md:text-xl/140 font-semibold bg-repeat
+        
+      &_list
+        @apply flex flex-col gap-2.5 text-base font-light w-full
+    &__link
+      @apply flex items-center gap-2.5 w-full text-xs md:text-base hover:text-primary 
+      &_icon
+        @apply shrink-0 text-inherit
+      &_text
+        @apply line-clamp-1 w-0 grow break-all text-inherit
+        
     &__certification
-      @apply w-full flex-container gap-x-10 md:gap-x-50px gap-y-3 flex-wrap max-xs:max-w-250px
+      @apply w-full flex-container bg-gray-1/20 relative py-2 md:py-6
+      &::before
+        @apply md:content-[''] absolute top-0 w-full h-1px bg-line
+      &_container
+        @apply flex-container w-full gap-x-10 md:gap-x-50px gap-y-3 flex-wrap max-xs:max-w-250px
       img
         @apply object-contain size-10 md:size-20
+    
+    &__bottom
+      @apply bg-black flex-container py-2.5 px-5 lg:py-6 gap-2.5 flex-col w-full -mt-5 md:-mt-6
+    &__copyright
+      @apply text-xs lg:text-2xl font-semibold lg:font-light
+    &__dmca-status img
+      @apply h-7 object-contain
   
+  .site-main
+    @apply w-full grow
 
   .site-logo
     img
@@ -243,7 +273,8 @@
     clip-path: polygon(calc(100% - 18px) 0%, 100% 50%, calc(100% - 18px) 100%, 18px 100%, 0% 50%, 18px 0%)
 
   .text-gradient
-    @apply bg-clip-text text-transparent
+    @apply bg-clip-text text-transparent bg-repeat
+    background-size: 100% 1.4em
 
   .icon
     @apply text-inherit

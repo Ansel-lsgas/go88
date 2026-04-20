@@ -42,11 +42,11 @@ module.exports = {
         1300: "1.3s",
       },
       colors: {
-        primary: "##F4B516",
+        primary: "#F4B516",
         brand: {
           1: "#F8E85C",
-          2: "##FFF59C",
-          3: "##FFFDDE",
+          2: "#FFF59C",
+          3: "#FFFDDE",
         },
         gray: {
           1: "#555555",
@@ -71,6 +71,7 @@ module.exports = {
           "linear-gradient(180deg, #FFFDDE 0%, #F8E85C 50%, #F4B516 100%)",
         popup:
           "linear-gradient(180deg, rgba(127, 127, 127, 0.20) 0%, rgba(0, 0, 0, 0.20) 54.19%, rgba(244, 181, 22, 0.20) 100%)",
+        line: "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #F4B516 50%, rgba(0, 0, 0, 0) 100%)",
         lang: "url('/assets/lang_frame.webp')",
         main: "url('/assets/bg_main.webp')",
         header: "url('/assets/bg_header.webp')",

@@ -8,48 +8,64 @@ footer(class="site-footer")
 
       div(class="site-footer__nav")
         div(class="site-footer__column")
-          p(class="site-footer__column_title") Pháp lý và tuân thủ
+          span(class="site-footer__column_title") Pháp lý và tuân thủ
           ul(class="site-footer__column_list")
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Về chúng tôi
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Về chúng tôi
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Điều khoản dịch vụ
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Điều khoản dịch vụ
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Chính sách bảo mật
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Chính sách bảo mật
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Chính sách nạp & rút
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Chính sách nạp & rút
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Chơi có trách nhiệm
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Chơi có trách nhiệm
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Chính sách KYC/AML
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Chính sách KYC/AML
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Miễn trừ trách nhiệm
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Miễn trừ trách nhiệm
 
         div(class="site-footer__column")
           p(class="site-footer__column_title") Hỗ trợ và xác thực
           ul(class="site-footer__column_list")
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Support
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Support
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") FAQ
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") FAQ
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Check link tool
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Check link tool
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Trung tâm khiếu nại
+              a(href="#" class="site-footer__link") 
+                span(class="site-footer__link_text") Trung tâm khiếu nại
 
         div(class="site-footer__column")
           p(class="site-footer__column_title") Sản phẩm
           ul(class="site-footer__column_list")
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Tải App Go88
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Tải App Go88
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Slot, Nổ hũ
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Slot, Nổ hũ
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Live Casino
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Live Casino
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Trạng thái hệ thống
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Trạng thái hệ thống
             li(class="site-footer__item")
-              a(href="#" class="site-footer__link") Kiểm tra MD5
+              a(href="#" class="site-footer__link")
+                span(class="site-footer__link_text") Kiểm tra MD5
 
         div(class="site-footer__column")
           p(class="site-footer__column_title") Mạng xã Hội
@@ -58,7 +74,7 @@ footer(class="site-footer")
               a(href="mailto:Compliance@Go88.org" class="site-footer__link")
                 span(class="site-footer__link_icon")
                   include ../icons/footer_mail.svg
-                span(class="site-footer__link_text")  Compliance@Go88.org
+                span(class="site-footer__link_text") Compliance@Go88.org
             li(class="site-footer__item")
               a(href="#fb" class="site-footer__link")
                 span(class="site-footer__link_icon")
@@ -81,14 +97,22 @@ footer(class="site-footer")
                 span(class="site-footer__link_text") Twitter
 
     div(class="site-footer__certification")
-      img(src="assets/partner_1.webp" alt="PAGCOR" )
-      img(src="assets/partner_2.webp" alt="BMM" )
-      img(src="assets/partner_3.webp" alt="iTech" )
-      img(src="assets/partner_4.webp" alt="DMCA" )
-      img(src="assets/partner_5.webp" alt="Gaming" )
-      img(src="assets/partner_6.webp" alt="Support" )
+      div(class="site-footer__certification_container")
+        a(href="#PAGCOR") 
+          img(src="assets/partner_1.webp" alt="PAGCOR" )
+        a(href="#BMM") 
+          img(src="assets/partner_2.webp" alt="BMM" )
+        a(href="#iTech") 
+          img(src="assets/partner_3.webp" alt="iTech" )
+        a(href="#DMCA") 
+          img(src="assets/partner_4.webp" alt="DMCA" )
+        a(href="#Gaming") 
+          img(src="assets/partner_5.webp" alt="Gaming" )
+        a(href="#Support") 
+          img(src="assets/partner_6.webp" alt="Support" )
 
     div(class="site-footer__bottom")
       p(class="site-footer__copyright") Go88 © 2026. Tất cả quyền được bảo lưu
       div(class="site-footer__dmca-status")
-        img(src="assets/dmca.webp" alt="DMCA Protected")
+        a(href="#DMCA") 
+          img(src="assets/dmca.webp" alt="DMCA Protected")
