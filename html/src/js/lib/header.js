@@ -1,25 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   const html = document.querySelector("html");
   const header = document.querySelector(".site-header");
-  const container = document.querySelector(".site-header__container");
-  const nav = document.querySelector("#header_nav");
-  const search = document.querySelector('#header_search')
-  const nestedDropdownTriggers = nav.querySelectorAll(".dropdown__item.btn--dropdown .dropdown__trigger")
-  if (!html || !header || !container || !nav) return;
+  if (!html || !header) return;
   const trigger = header.querySelector("#header_trigger");
   if (!trigger) return;
   const paths = trigger.querySelectorAll("path");
   if (!paths.length) return;
 
-  const headerClasses = ["fixed", "h-screen", "bg-white"];
-  const containerClasses = ["items-start", "h-fit"];
-  const navClasses = ["flex-col", "max-lg:hidden"];
   const pathClasses = ["opacity-0", "translate-x-full"];
   const initialPathLines = ["M4 8H36", "M4 32H36"];
   const closePathLines = ["M8 8L32 32", "M8 32L32 8"];
-  const nestedDropdownTriggerClasses = ["!text-primary", "bg-alpha/10"]
 
   const animationPaths = [paths[0], paths[1]];
+  console.log(animationPaths, paths);
   animationPaths.forEach((path) => {
     path.style.strokeDashoffset = 0;
     path.style.strokeDasharray = 32;
@@ -28,16 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let transitionTimeout;
   trigger.addEventListener("click", () => {
     html.classList.toggle("overflow-hidden");
-    headerClasses.forEach((className) => header.classList.toggle(className));
-    containerClasses.forEach((className) =>
-      container.classList.toggle(className),
-    );
-    navClasses.forEach((className) => nav.classList.toggle(className));
+    header.classList.toggle("mobile-open");
+
     pathClasses.forEach((className) => paths[2].classList.toggle(className));
-    if(search) search.classList.toggle("max-lg:hidden")
+    if (search) search.classList.toggle("max-lg:hidden");
     clearTimeout(transitionTimeout);
 
-    if (header.classList.contains("fixed")) {
+    if (header.classList.contains("mobile-open")) {
       animationPaths.forEach((path) => {
         path.style.strokeDashoffset = 36;
         path.style.strokeDasharray = 36;
@@ -76,15 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const lgScreen = 1024;
     if (window.innerWidth >= lgScreen) return;
     html.classList.remove("overflow-hidden");
-    headerClasses.forEach((className) => header.classList.remove(className));
-    containerClasses.forEach((className) =>
-      container.classList.remove(className),
-    );
-    navClasses.forEach((className) => nav.classList.remove(className));
+    header.classList.remove("mobile-open");
+
     pathClasses.forEach((className) => paths[2].classList.remove(className));
-    nestedDropdownTriggerClasses.forEach((className) => nestedDropdownTriggers.forEach(trigger => trigger.classList.remove(className)));
-    nav.classList.add("max-lg:hidden");
-    if(search) search.classList.add("max-lg:hidden")
 
     paths[0].setAttribute("d", initialPathLines[0]);
     paths[1].setAttribute("d", initialPathLines[1]);
@@ -95,4 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.addEventListener("resize", handleResize);
+
+  const updateScrolledState = () => {
+    if (window.scrollY > 0) {
+      header.classList.add("is-sticky");
+    } else {
+      header.classList.remove("is-sticky");
+    }
+  };
+  window.addEventListener("scroll", updateScrolledState, { passive: true });
+  updateScrolledState();
 });

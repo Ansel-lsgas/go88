@@ -1,35 +1,68 @@
-include ./utils/_dropdown_links
+mixin langSwitcher()
+  div(class="btn--dropdown" data-value="vn")
+    button(class="dropdown__trigger lang-switcher" type="button" aria-label="Chọn ngôn ngữ")
+      div(class="dropdown__label")
+        div(class="lang-switcher__flag-wrapper")
+          div(class="lang-switcher__flag-inner")
+            img(src="assets/lang_viet.webp" alt="Ngôn ngữ hiện tại")
+        span(class="lang-switcher__label lg:hidden") Tiếng Việt
+      span(class="dropdown__indicator")
+        include ../icons/site_chevron.svg
+
+
+    div(class="dropdown__list dropdown__list--at-right hidden")
+      div(class="dropdown__item lang-switcher__option" data-value="vn")
+        div(class="lang-switcher__option-flag")
+          img(src="assets/lang_viet.webp" alt="Tiếng Việt")
+        span(class="lang-switcher__option-label") Tiếng việt
+
+      div(class="dropdown__item lang-switcher__option" data-value="en")
+        div(class="lang-switcher__option-flag")
+          img(src="assets/lang_eng.webp" alt="English")
+        span(class="lang-switcher__option-label") English
 
 header(class="site-header")
+  button#header_trigger(class="site-header__mobile-icon lg:hidden")
+    include ../icons/site_burger.svg
+
+  a(class="site-header__logo" href="#trang_chu")
+    img(src="assets/logo.webp" alt="Logo GO88")
+  
+  div(class="site-header__pseudo lg:hidden")
+
   div(class="site-header__container")
-    button#header_trigger(class="site-header__mobile-icon")
-      //- include ../icons/_ic_menu.svg
-      
-    nav#header_nav(class="site-header__nav max-lg:hidden")
-      a(class="site-header__nav_link active" href="#trang_chu") Trang chủ
-      div(class="btn--dropdown active")
+    nav#header_nav(class="site-header__nav")
+      a(class="site-header__nav-item active" href="#trang_chu")
+        span(class="site-header__nav-item-wrapper")
+          span(class="site-header__nav-item-label") Trang chủ
+
+      a(class="site-header__nav-item" href="#ve_chung_toi")
+        span(class="site-header__nav-item-wrapper")
+          span(class="site-header__nav-item-label") Chúng tôi
+
+      a(class="site-header__nav-item" href="#tro_choi")
+        span(class="site-header__nav-item-wrapper")
+          span(class="site-header__nav-item-label") Trò chơi
         
-      a(class="site-header__nav_link" href="#bai_viet") Bài viết
-      div(class="btn--dropdown")
-        +dropdownLinks({label: "thống kê"}, [{ label: "Sài Gòn" }, { label: "Đà Nẵng" }, { label: "Hà Nội" }], true)
-      a(class="site-header__nav_link" href="#calendar") Lịch vạn niên
-      a(class="site-header__nav_link" href="#calendar") Sổ mơ
-      
+      //- a(class="site-header__nav-item" href="#quan_tri")
+      //-   span(class="site-header__nav-item-wrapper")
+      //-     span(class="site-header__nav-item-label") Quản Trị
+        
+      //- a(class="site-header__nav-item" href="#huong_dan")
+      //-   span(class="site-header__nav-item-wrapper")
+      //-     span(class="site-header__nav-item-label") Hướng Dẫn
+        
+      //- a(class="site-header__nav-item" href="#tin_tuc")
+      //-   span(class="site-header__nav-item-wrapper")
+      //-     span(class="site-header__nav-item-label") Tin Tức
+        
 
-    //- Logo
-    //- include ./utils/_logo
-      
-    button#header_qr(class="site-header__mobile-icon")
-      //- include ../icons/_ic_qr.svg
-
-    div#header_action(class="site-header__action")
-      a(class="site-header__action_main" href="#do-ve-so")
-        | Quét vé số để dò
-      button#open_search_modal(class="site-header__action_btn" aria-label="Tìm kiếm")
-        //- include ../icons/_ic_magnifier.svg
-
-    form#header_search(class="site-header__search max-lg:hidden")
-      input(class="" type="text" placeholder="Nhập nội dung tìm kiếm")
-      button(class="" aria-label="Tìm kiếm" type="submit")
-        //- include ../icons/_ic_magnifier.svg
-
+    a(class="site-header__cta btn--primary" href="#xac-thuc")
+      span(class="btn--primary__wrapper")
+        span(class="btn--primary__inner") Xác Thực Link Chính Hãng
+    +langSwitcher()
+    
+    form(class="site-header__search hidden" action="#" method="get")
+      span(class="site-header__search-icon")
+        include ../icons/site_search.svg
+      input(class="site-header__search-input" type="text" name="domain" placeholder="Nhập domain.com")

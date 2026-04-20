@@ -1,20 +1,18 @@
 @use '../text_editor.css' as *
 
 @font-face
-  font-family: "Mulish";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("../assets/fonts/mulish.woff2") format("woff2");
-
+  font-family: "Mulish"
+  font-style: normal
+  font-weight: 100 900
+  font-display: swap
+  src: url("../assets/fonts/mulish.woff2") format("woff2")
 
 @font-face
-  font-family: "Mulish";
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("../assets/fonts/mulish--italic.woff2") format("woff2");
-
+  font-family: "Mulish"
+  font-style: italic
+  font-weight: 100 900
+  font-display: swap
+  src: url("../assets/fonts/mulish--italic.woff2") format("woff2")
 
 @tailwind base
 @tailwind components
@@ -25,10 +23,10 @@
     @apply outline-none box-border overscroll-auto font-inherit
 
   html
-    @apply flex justify-center overflow-x-clip scroll-smooth bg-primary
+    @apply flex justify-center overflow-x-clip scroll-smooth bg-black
 
   body
-    @apply font-arial text-base leading-relaxed text-inherit bg-main
+    @apply font-arial text-base leading-relaxed text-inherit bg-main bg-cover
 
   a
     @apply cursor-pointer
@@ -40,126 +38,93 @@
 
   .site-body
     @apply min-h-screen w-full relative lg:gap-2.5 flex flex-col items-center font-mulish
-    & > .mft-click
-      @apply px-2.5 lg:px-10 lmt:px-15
 
   .site-header
-    @apply lg:h-88px w-full sticky top-0 z-[99] transition duration-300 bg-subtle-0 flex justify-center
+    @apply w-full flex gap-x-6 items-center justify-between lg:justify-center max-w-lmd px-5 max-lg:flex-wrap transition duration-300
+    &__mobile-icon, &__pseudo
+      @apply lg:hidden size-6
+    &__logo
+      @apply shrink-0 lg:mr-auto
+      img
+        @apply object-contain h-20 lg:h-25
     &__container
-      @apply w-full max-w-lmt h-fit lg:h-full py-2 px-2.5 lg:px-10 lmt:px-15 flex justify-between items-center flex-wrap relative
-    .site-logo
-      @apply lg:absolute left-1/2 lg:-translate-x-1/2 max-lg:h-62px max-lg:w-72px
-    &__mobile-icon
-      @apply text-30px lg:hidden my-13px
+      @apply max-lg:hidden flex max-lg:flex-col py-3 lg:p-0 gap-5 lg:gap-6 max-lg:w-full max-lg:items-center
     &__nav
-      @apply flex max-lg:items-start max-lg:flex-col max-lg:w-full items-center gap-5 lmt:gap-8 lg:pr-5 lmt:pr-8 max-lg:order-6 max-lg:overflow-auto max-lg:h-header-nav lg:grow
-      & > :nth-child(5)
-        @apply lg:ml-auto
-      &_link
-        @apply text-black font-medium text-2xl/150 lg:text-lg/150 uppercase shrink-0
-        &.active
-          @apply text-primary underline
-      .btn--dropdown
-        @apply max-lg:w-full max-lg:gap-0 shrink-0
-        &.active
-          & > .dropdown__trigger
-            .dropdown__label, .dropdown__indicator
-              @apply text-primary underline
-
+      @apply max-lg:w-full lg:bg-black/20 lg:shadow-nav rounded-10px flex max-lg:flex-col gap-5 lg:gap-6 lg:px-6 lg:h-10
+      &-item
+        @apply max-lg:w-full max-lg:h-10 text-white uppercase lg:capitalize flex items-center justify-center font-semibold rounded-10px border-0.5px border-gray-2/40 bg-black/20 shadow-btn-2 lg:border-0 lg:shadow-none lg:bg-transparent flex items-center justify-center
+        &-wrapper
+          @apply size-full flex items-center justify-center
+        &-label 
+          @apply max-lg:px-5 p-2.5 size-full flex items-center justify-center relative line-clamp-1
         &:hover
-          & > .dropdown__trigger .dropdown__indicator
-            @apply lg:rotate-90
-          & > .dropdown__list
-            @apply lg:block
+          .site-header__nav-item-label
+            @apply lg:bg-golden lg:text-gradient
+        &.active
+          @apply max-lg:p-2px
+          .site-header__nav-item-wrapper
+            @apply rounded-9px max-lg:bg-golden max-lg:shadow-btn-1-outside max-lg:p-1px
+          .site-header__nav-item-label
+            @apply rounded-lg bg-black/40 max-lg:shadow-btn-1-inside lg:bg-golden lg:text-gradient
+            &::before
+              @apply lg:content-[''] absolute bottom-0 w-full h-1 bg-golden rounded-4px
+    &__cta 
+      @apply h-10 flex items-center
+      & > span > span
+        @apply py-2.5 px-5
+    .btn--dropdown
+      @apply shrink-0 w-fit
+      .dropdown__trigger
+        @apply flex items-center gap-3 text-white
         .dropdown__label
-          @apply text-black font-medium text-2xl/150 lg:text-lg/150 uppercase w-full
-        .dropdown__trigger
-          @apply gap-0 w-full
-        .dropdown__indicator
-          @apply max-lg:px-5
-        .dropdown__list
-          @apply max-lg:static z-[99] max-lg:shadow-none bg-transparent border-t-0 max-lg:max-w-full max-lg:overflow-hidden lg:bg-white lg:rounded-2xl py-3 space-y-1
-          .dropdown__item
-            @apply text-black text-sm/140 lg:text-13px/140 font-arial normal-case font-bold w-full hover:lg:text-primary hover:lg:bg-alpha/10 lg:pb-1 max-lg:py-1 max-lg:pr-0
-            &:last-child
-              @apply lg:pb-0
-            &:hover
-              .dropdown__trigger
-                @apply lg:text-primary
-            a
-              @apply text-inherit font-inherit
-            &.btn--dropdown
-              @apply gap-0 
-            .dropdown__trigger
-              @apply justify-between items-center
-            .dropdown__indicator
-              @apply text-8px text-primary max-lg:px-5 p-1
-            .dropdown__label
-              @apply font-arial text-sm/140 lg:text-13px/140 normal-case font-bold
-            .dropdown__item
-              @apply font-light font-arial normal-case
-            .dropdown__list
-              @apply lg:left-full lg:-top-3 lg:overflow-auto
+          @apply flex items-center gap-3
+      .lang-switcher
+        @apply flex items-center gap-2
+        &__flag-wrapper
+          @apply flex items-center justify-center p-2px rounded-10px bg-gray-4/40 bg-lang bg-contain bg-no-repeat
+        &__flag-inner
+          @apply size-full flex items-center justify-center rounded-9px
+          img
+            @apply rounded-lg w-50px h-34px object-contain
+        &__label
+          @apply text-base font-light text-white
 
-      // Căn trái cho dropdown cấp 1 (tránh build/prod thiếu class --at-left)
-      & > .btn--dropdown
+      .dropdown__list
+        @apply rounded-10px border-gray-2/40 bg-popup p-2.5 gap-2.5 shadow-popup bg-black/60
+      .dropdown__item:hover
+        @apply bg-transparent
+      .lang-switcher__option
+        @apply flex items-center gap-2.5 p-0
+        &-label
+          @apply font-light text-sm text-white
+        &-flag
+          @apply w-6 h-18px rounded-2px overflow-hidden border-0.5px border-transparent
+          img
+            @apply object-contain size-full
         &:hover
-          & > .dropdown__list
-            @apply lg:block left-0 right-auto !important
+          .lang-switcher__option-flag
+            @apply bg-golden bg-clip-border shadow-lang
+          .lang-switcher__option-label
+            @apply bg-golden text-gradient
+          
+    &.mobile-open
+      @apply fixed h-screen bg-header bg-cover bg-center items-start
+      .site-header__container
+        @apply max-lg:flex h-dynamic-nav
+      .site-header__mobile-icon
+        @apply self-center
+    &.is-sticky
+      @apply bg-header/80 backdrop-blur-sm
 
-    &__action
-      @apply flex items-center justify-end gap-5 max-lg:hidden
-      &_main
-        @apply font-medium rounded-full border px-5 py-2 btn--primary hover:btn--primary--hover
-      &_btn
-        @apply text-4xl
-    &__search
-      @apply w-full order-5 flex relative items-center mt-8 mb-5 lg:hidden
-      input
-        @apply w-full h-10 pl-5 pr-70px rounded-20px border border-subtle-1
-      button
-        @apply text-2xl absolute right-3
 
-  .site-footer
-    @apply w-full lg:px-10 lmt:px-15 py-3 flex flex-col items-center gap-10 max-w-lmt
-    &__line
-      @apply border-t border-t-black/10 w-full
-    &__links
-      @apply grid grid-cols-2-auto xl:grid-cols-4-auto gap-2 mb:gap-5 lmt:gap-10 text-sm w-full justify-center
-      &_column
-        @apply space-y-5 mb:w-178px sm:w-246px
-      &_title
-        @apply text-primary text-lg px-3 font-medium
-      &_list
-        @apply text-xs/140 text-dark-1
-      &_link
-        @apply flex gap-1 py-1 px-4 items-center
-        &_icon
-          @apply text-subtle-1 text-8px transition duration-300
-        &_text
-          @apply line-clamp-1
-        &:hover
-          .site-footer__links_link_icon
-            @apply text-alpha
 
-    &__brand
-      @apply flex flex-col items-center gap-3 w-full
-      &_contents
-        @apply flex flex-col gap-14px items-center
-        &_title
-          @apply font-bold text-32px/120 xl:text-44px/120 text-dark-0 uppercase max-sm:w-3/4 text-center
-        &_links
-          @apply flex gap-space items-center text-black text-xs/120
-          a
-            @apply transition duration-300 line-clamp-1
-            &:hover
-              @apply text-primary
-
-  .site-body
-    & > .horizontal-mft
-      @apply max-w-lmt px-2.5 lg:px-10 lmt:px-15 max-lg:mt-4 max-sm:mt-2 max-md:flex-col
-      .mft-click
-        @apply max-md:w-full
+    
+  .btn--primary
+    @apply flex items-center justify-center rounded-10px bg-gray-4/40 p-2px
+    &__wrapper
+      @apply size-full flex items-center justify-center bg-golden shadow-btn-1-outside rounded-9px px-1px
+    &__inner
+      @apply size-full flex items-center justify-center bg-black/40 shadow-btn-1-inside rounded-lg text-white
 
   .horizontal-mft
     @apply flex gap-2 md:gap-4 items-center justify-center w-full
@@ -174,23 +139,6 @@
     img, picture, a
       @apply size-full object-cover
 
-
-  .site-main
-    @apply grow w-full max-w-lmt flex max-lg:flex-col lg:max-lmt:grid grid-cols-main grid-rows-main justify-center px-2.5 lg:px-10 lmt:px-15 justify-between gap-x-6 lmt:gap-x-12 lmt:flex-wrap
-
-  .left-side
-    @apply w-full lmt:w-side max-lg:order-3 col-start-1 row-start-3 space-y-5 lmt:mb-10
-    .ads-vertical
-      @apply max-lmt:hidden h-336px sticky top-110px z-[98]
-
-  .right-side
-    @apply w-full lg:w-side row-span-3 space-y-5 lmt:mb-10
-    .ads-vertical
-      @apply max-lg:hidden h-954px lg:top-110px lg:z-[91] lg:sticky
-
-  .main-side
-    @apply w-full lg:grow col-start-1 row-start-1 lmt:w-0 flex flex-col items-center gap-2.5 lg:gap-5 lg:mb-5 lmt:mb-10 min-w-0
-
   .side-section
     @apply w-full flex justify-center
 
@@ -199,22 +147,21 @@
     img
       @apply object-contain size-full
 
-
   .btn--dropdown
     @apply flex relative flex-col gap-2
 
     .dropdown__trigger
-      @apply flex gap-space text-black text-2xl/150 lg:text-lg/150 uppercase
+      @apply flex gap-space text-black text-2xl/150 lg:text-lg/150
 
       .dropdown__indicator
         @apply text-2xl flex justify-center items-center cursor-pointer
 
     .dropdown__list
-      @apply border-t-4 border-primary bg-subtle-2 rounded-b min-w-full w-max py-2 absolute top-full right-0 shadow-md shadow-black/80 lg:max-h-246px gap-2
+      @apply border-t-4 rounded-b min-w-full w-max py-2 absolute top-full right-0 shadow-md shadow-black/80 lg:max-h-246px gap-2
       &.dropdown__list--at-left
         @apply left-0 right-auto
       .dropdown__item
-        @apply flex text-black text-xl/150 lg:text-base/150 uppercase px-4 hover:bg-white cursor-pointer
+        @apply flex text-black text-xl/150 lg:text-base/150 px-4 cursor-pointer
         // Item cấp 1 có sub-menu flyout bên phải
         &--has-children
           @apply relative pr-8
@@ -222,18 +169,11 @@
             @apply flex items-center justify-between w-full gap-2
           .dropdown__item--arrow
             @apply shrink-0 text-base opacity-60
-          // Flyout hiện ra bên phải khi hover — căn top theo viewport để không bị tràn
-          .dropdown__list--flyout
-            @apply hidden absolute left-full border-t-4 border-primary bg-subtle-2 rounded-b min-w-[180px] w-max py-2 shadow-md shadow-black/80
-            top: 0
-          &:hover
-            > .dropdown__list--flyout
-              @apply flex flex-col
-              max-height: calc(100vh - 80px)
-              overflow-y: auto
-
-  .btn--see-all
-    @apply text-xs/140 border rounded-full py-2 px-5 text-center btn--primary hover:btn--primary--hover
+    &:hover
+      .dropdown__list
+        @apply lg:flex lg:flex-col
+      .dropdown__indicator
+        @apply lg:rotate-180
 
   .btn--scroll
     @apply size-fit flex items-center justify-center transition duration-150
@@ -248,124 +188,17 @@
     &.btn--scroll--up
       .btn--scroll__span
         @apply rotate-180
-
-  .site-corner
-    @apply fixed bottom-16 right-0 px-3 lg:px-6 flex z-[98] flex-col gap-2 md:gap-4 items-end max-w-full max-sm:w-full w-390px
-    .ai-chat__chat_box
-      @apply min-h-70
-      &_message > span
-        @apply xs:max-w-message sm:max-w-message md:max-w-message lg:max-w-message
-  .ai-shortcut
-    @apply size-10 flex items-center justify-center text-primary rounded-lg shadow-md shadow-vibrant/80 transition duration-300 bg-secondary backdrop-blur-sm border border-primary rounded-full overflow-hidden
-    &:hover
-      @apply shadow-vibrant/80 shadow-lg shadow-inner bg-primary text-black
-
   .btn--scroll-window--top
-    @apply size-10 text-primary rounded-lg shadow-md shadow-vibrant/80 transition duration-300 bg-secondary backdrop-blur-sm border border-primary flex
+    @apply size-10 rounded-lg shadow-md  transition duration-300 backdrop-blur-sm border flex
     &:hover
-      @apply shadow-vibrant/80 shadow-lg shadow-inner bg-primary
-      .btn--scroll__span, svg
-        @apply text-secondary
+      @apply  shadow-lg shadow-inner
     .btn--scroll__span, svg
       @apply flex text-lg text-primary
-
-  .search-modal
-    @apply h-screen w-screen fixed z-[999] flex flex-col items-center justify-center gap-2.5 px-15 bg-main
-    &__bar
-      @apply flex gap-5 items-center justify-center w-full text-black py-6 max-w-lmd
-      &>span
-        @apply text-40px opacity-20
-      input
-        @apply uppercase text-lg grow bg-transparent
-      &>button
-        @apply text-40px
-    &__result
-      @apply grow w-full py-10 flex flex-col items-center gap-15 overflow-auto
-      &_block
-        @apply flex flex-col gap-5 items-start max-w-648px w-full
-        &_tab
-          @apply border rounded-full text-sm/140 font-light btn--primary px-3 py-1
-    &__blog
-      @apply flex gap-5 items-center justify-start
-      img
-        @apply aspect-square size-15 lg:size-25
-      div
-        @apply flex flex-col gap-1.5 items-start text-lg text-dark-0
-        span
-          @apply font-bold
-        p
-          @apply font-light
-    &__calendar
-      @apply flex gap-2.5 text-lg text-dark-0 flex-col
-      span
-        @apply font-bold
-      p
-        @apply font-light
-    &__line
-      @apply  text-lg text-dark-0 font-bold
-
-
-
-    &__welcome
-      @apply flex mt-auto items-end
-      &_text
-        @apply flex flex-col pb-35px gap-1
-        span
-          @apply text-base font-bold btn--primary--hover rounded-full px-3
-
-
-  .ai-chat
-    @apply bg-white border border-subtle-1 rounded-2xl w-full py-3 px-4 flex flex-col gap-3
-    &__headline
-      @apply flex items-center uppercase text-primary gap-2
-      &_icon
-        @apply text-xl
-      &_title
-        @apply font-bold
-      .btn--close
-        @apply rounded backdrop-blur-md flex items-center justify-center text-white ml-auto size-8 bg-black/50 hover:scale-110 text-xl shrink-0
-    &__chat
-      &_box
-        @apply flex flex-col gap-2 max-h-70 overflow-auto pr-14px -mr-14px pb-3
-        &_message
-          @apply flex text-black text-xs/140 font-light
-          &>span
-            @apply rounded-lg p-2 max-w-70 xs:max-w-390px sm:max-w-500px md:max-w-750px lg:max-w-500px
-          &.message--ai >span
-            @apply bg-light-2
-          &.message--user
-            @apply justify-end
-            &>span
-              @apply bg-alpha/10
-        #ai_chat_loading
-          @apply py-2 mb-2
-
-      &_form
-        @apply flex items-stretch gap-2.5 border border-light-1 rounded-lg p-2
-        &_input
-          @apply grow resize-none h-9 text-sm/140 font-bold text-black pr-2
-        &_button
-          @apply shrink-0 btn--primary--hover hover:btn--primary h-9 w-74px flex items-center justify-center text-2xl rounded-lg border
-    
-
-
-
-  .ball--primary
-    background: radial-gradient(72.13% 72.13% at 71.94% 31.28%, #FFF 0%, #FF0E41 100%)
-  .ball--vibrant
-    background: radial-gradient(72.13% 72.13% at 71.94% 31.28%, #FFF 0%, #375F90 100%)
-  .ball--positive
-    background: radial-gradient(72.13% 72.13% at 71.94% 31.28%, #FFF 0%, #009113 100%)
-  .ball--silver
-    background: radial-gradient(72.13% 72.13% at 71.94% 31.28%, #FFF 0%, #999 100%)
-  .ball--gold
-    background: radial-gradient(75.49% 75.49% at 14.58% 33.33%, #FFF 0%, #E4BB55 100%)
 
   .indicator--loading
     @apply size-full absolute top-0 left-0 flex justify-center items-center
     span
       @apply animate-spin
-    
 
 @layer utilities
   .lazy
@@ -374,19 +207,14 @@
   .lazy.loaded
     visibility: visible
 
-  .prose
-    @apply max-w-none text-base
+  .hexagon-outline
+    clip-path: polygon(calc(100% - 18px) 0%, 18px 0%, 0 50%, 3px 50%, 19px 2px,calc(100% - 19px) 2px, calc(100% - 3px) 50%, calc(100% - 19px) calc(100% - 2px), 19px calc(100% - 2px), 3px 50%, 0px 50%, 18px 100%, calc(100% - 18px) 100%, 100% 50%)
 
-  .btn--primary
-    @apply text-primary border-current bg-transparent
-  .btn--primary--hover
-    @apply text-white bg-primary border-primary
-  .btn--black--hover
-    @apply text-white bg-black border-black
-  .btn--dark
-    @apply text-dark-0 border-dark-0 bg-transparent
-  .btn--dark--hover
-    @apply text-white bg-dark-0 border-dark-0
+  .hexagon-solid
+    clip-path: polygon(calc(100% - 18px) 0%, 100% 50%, calc(100% - 18px) 100%, 18px 100%, 0% 50%, 18px 0%)
+
+  .text-gradient
+    @apply bg-clip-text text-transparent
 
   .icon
     @apply text-inherit
@@ -418,20 +246,19 @@
   .no-spinner
     -moz-appearance: textfield
 
-
   .mft--1000x60, .mft--728x90, .mft--300x600, .mft--336x280, .mft--320x100
     @apply flex
 
   .mft--728x90
-    @apply aspect-leader 
+    @apply aspect-leader
     img, picture, a
       @apply max-w-728px max-h-90px
-  
+
   .mft--1000x60
     @apply aspect-feed
     img, picture, a
       @apply max-w-250 max-h-15
-  
+
   .mft--300x600
     @apply aspect-half
     img, picture, a
@@ -441,7 +268,7 @@
     @apply aspect-rectangle
     img, picture, a
       @apply max-w-336px max-h-70
-  
+
   .mft--320x100
     @apply aspect-mobile
     img, picture, a
@@ -451,7 +278,6 @@
     @apply aspect-square
     img, picture, a
       @apply max-w-250px max-h-250px
-  
+
   .mft--sticky
     @apply sticky top-110px z-[91]
-  

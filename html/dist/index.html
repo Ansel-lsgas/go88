@@ -3,37 +3,50 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XS • Kết quả xổ số</title>
+    <title>GO88</title>
     <link rel="stylesheet" href="css/lib.min.css">
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body class="site-body">
     <header class="site-header">
+      <button class="site-header__mobile-icon lg:hidden" id="header_trigger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </button><a class="site-header__logo" href="#trang_chu"><img src="assets/logo.webp" alt="Logo GO88"></a>
+      <div class="site-header__pseudo lg:hidden"></div>
       <div class="site-header__container">
-        <button class="site-header__mobile-icon" id="header_trigger"></button>
-        <nav class="site-header__nav max-lg:hidden" id="header_nav"><a class="site-header__nav_link active" href="#trang_chu">Trang chủ</a>
-          <div class="btn--dropdown active"></div><a class="site-header__nav_link" href="#bai_viet">Bài viết</a>
-          <div class="btn--dropdown">
-                <div class="dropdown__trigger nav__link"><a class="dropdown__label" href="#" aria-label="Go to thống kê" role="link">thống kê</a><span class="dropdown__indicator"></span></div>
-                <ul class="dropdown__list hidden dropdown__list--at-left">
-                  <li class="dropdown__item"><a href="#" aria-label="Go to Sài Gòn" role="link">Sài Gòn</a></li>
-                  <li class="dropdown__item"><a href="#" aria-label="Go to Đà Nẵng" role="link">Đà Nẵng</a></li>
-                  <li class="dropdown__item"><a href="#" aria-label="Go to Hà Nội" role="link">Hà Nội</a></li>
-                </ul>
-          </div><a class="site-header__nav_link" href="#calendar">Lịch vạn niên</a><a class="site-header__nav_link" href="#calendar">Sổ mơ</a>
-        </nav>
-        <button class="site-header__mobile-icon" id="header_qr"></button>
-        <div class="site-header__action" id="header_action"><a class="site-header__action_main" href="#do-ve-so">Quét vé số để dò</a>
-          <button class="site-header__action_btn" id="open_search_modal" aria-label="Tìm kiếm"></button>
-        </div>
-        <form class="site-header__search max-lg:hidden" id="header_search">
-          <input type="text" placeholder="Nhập nội dung tìm kiếm">
-          <button aria-label="Tìm kiếm" type="submit"></button>
+        <nav class="site-header__nav" id="header_nav"><a class="site-header__nav-item active" href="#trang_chu"><span class="site-header__nav-item-wrapper"><span class="site-header__nav-item-label">Trang chủ</span></span></a><a class="site-header__nav-item" href="#ve_chung_toi"><span class="site-header__nav-item-wrapper"><span class="site-header__nav-item-label">Chúng tôi</span></span></a><a class="site-header__nav-item" href="#tro_choi"><span class="site-header__nav-item-wrapper"><span class="site-header__nav-item-label">Trò chơi</span></span></a></nav><a class="site-header__cta btn--primary" href="#xac-thuc"><span class="btn--primary__wrapper"><span class="btn--primary__inner">Xác Thực Link Chính Hãng</span></span></a>
+            <div class="btn--dropdown" data-value="vn">
+              <button class="dropdown__trigger lang-switcher" type="button" aria-label="Chọn ngôn ngữ">
+                <div class="dropdown__label">
+                  <div class="lang-switcher__flag-wrapper">
+                    <div class="lang-switcher__flag-inner"><img src="assets/lang_viet.webp" alt="Ngôn ngữ hiện tại"></div>
+                  </div><span class="lang-switcher__label lg:hidden">Tiếng Việt</span>
+                </div><span class="dropdown__indicator"><svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 10L12 16L18 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+              </button>
+              <div class="dropdown__list dropdown__list--at-right hidden">
+                <div class="dropdown__item lang-switcher__option" data-value="vn">
+                  <div class="lang-switcher__option-flag"><img src="assets/lang_viet.webp" alt="Tiếng Việt"></div><span class="lang-switcher__option-label">Tiếng việt</span>
+                </div>
+                <div class="dropdown__item lang-switcher__option" data-value="en">
+                  <div class="lang-switcher__option-flag"><img src="assets/lang_eng.webp" alt="English"></div><span class="lang-switcher__option-label">English</span>
+                </div>
+              </div>
+            </div>
+        <form class="site-header__search hidden" action="#" method="get"><span class="site-header__search-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#717784" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+          <input class="site-header__search-input" type="text" name="domain" placeholder="Nhập domain.com">
         </form>
       </div>
     </header>
     <div class="site-main">
-      <div>test</div>
     </div>
     <footer class="site-footer"><span class="site-footer__line"></span>
       <div class="site-footer__links">

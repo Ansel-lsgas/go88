@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isClickedAnchor) return;
 
       dropdown.classList.toggle("hidden");
-      if (indicator) indicator.classList.toggle("rotate-90");
+      if (indicator) indicator.classList.toggle("rotate-180");
       if (header.contains(e.target) && e.target.closest(".dropdown__item")) {
          trigger.classList.add("!text-primary"); 
          trigger.classList.add("bg-alpha/10") 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       item.addEventListener("click", (e) => {
         if (e.target.closest(".dropdown__indicator")) return;
         dropdown.classList.add("hidden");
-        if (indicator) indicator.classList.remove("rotate-90");
+        if (indicator) indicator.classList.remove("rotate-180");
 
         // Form dropdowns: update trigger value + label + dispatch event
         const value = item.dataset.value;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (ctn.contains(event.target)) return;
       dropdown.classList.add("hidden");
       if (!indicator) return;
-      indicator.classList.remove("rotate-90");
+      indicator.classList.remove("rotate-180");
     });
   });
 });

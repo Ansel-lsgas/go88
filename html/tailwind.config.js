@@ -41,43 +41,38 @@ module.exports = {
       transitionDuration: {
         1300: "1.3s",
       },
-      boxShadow: {
-        section: "0 0 50px 0 #FFF4D9",
-      },
       colors: {
-        primary: "#FF0E41",
-        secondary: "#FFD139",
-        alpha: "#FFB600",
-        active: "#F0B92D",
-        vibrant: "#375F90",
-        positive: "#009113",
-        dark: {
-          0: "#333333",
-          1: "#201313",
-          2: "#364153",
-          3: "#4A5565",
-          4: "#6A7282",
-          5: "#99A1AF",
-          6: "#F9FAFB",
+        primary: "##F4B516",
+        brand: {
+          1: "#F8E85C",
+          2: "##FFF59C",
+          3: "##FFFDDE",
         },
-        light: {
-          0: "#FFFFFF",
-          1: "#F5F5F5",
-          2: "#DFDFDF",
+        gray: {
+          1: "#555555",
+          2: "#666666",
+          3: "#717784",
+          4: "#808080",
         },
-        subtle: {
-          0: "#FFF6EA",
-          1: "#F2E8DC",
-          2: "#FFE8C9",
-        },
-        brown: {
-          1: "#EDEBE2",
-          2: "#D5CCC1",
-          3: "#BD8E4E",
-        },
+        header: "#1A1A1A",
+      },
+      boxShadow: {
+        nav: "0 2px 10px 0 rgba(244, 181, 22, 0.30) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.15)",
+        "btn-1-inside":
+          "-3px -1px 2.8px 0 rgba(254, 250, 236, 0.82) inset, 0 4px 4px 0 rgba(255, 250, 229, 0.76) inset",
+        "btn-1-outside": "0 4px 8px 0 #FFED9C inset",
+        "btn-2": "0 2px 10px 0 rgba(244, 181, 22, 0.30) inset",
+        popup: "0 2px 20px 0 rgba(244, 181, 22, 0.20) inset",
+        lang: "0 2px 4px 0 rgba(244, 181, 22, 0.20) inset",
       },
       backgroundImage: {
-        main: "linear-gradient(180deg, #FFF6EA 0%, #FFF 92.5%)",
+        golden:
+          "linear-gradient(180deg, #FFFDDE 0%, #F8E85C 50%, #F4B516 100%)",
+        popup:
+          "linear-gradient(180deg, rgba(127, 127, 127, 0.20) 0%, rgba(0, 0, 0, 0.20) 54.19%, rgba(244, 181, 22, 0.20) 100%)",
+        lang: "url('/assets/lang_frame.webp')",
+        main: "url('/assets/bg_main.webp')",
+        header: "url('/assets/bg_header.webp')",
       },
       screens: {
         mb: "375px",
@@ -87,16 +82,14 @@ module.exports = {
         lmt: "1440px",
       },
       scale: {
-        '175': '1.75',
-        '200': '2',
-        '250': '2.5',
+        175: "1.75",
+        200: "2",
+        250: "2.5",
       },
       spacing: {
-        "header-nav": "calc(100vh - 170px)",
-        "nav-width": "calc(50vw - 94px)",
-        message: "85%",
+        "dynamic-nav": "calc(100vh - 80px)",
         space: "0.5ch",
-        lmd: "1320px",
+        lmd: "1480px",
         lmt: "1440px",
         side: "250px",
         2.5: "10px",
@@ -108,6 +101,9 @@ module.exports = {
         150: "600px",
         200: "800px",
         250: "1000px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
         "13px": "13px",
         "14px": "14px",
         "17px": "17px",
@@ -115,8 +111,10 @@ module.exports = {
         "22px": "22px",
         "24px": "24px",
         "26.4px": "26.4px",
+        "34px": "34px",
         "35px": "35px",
         "38px": "38px",
+        "50px": "50px",
         "52px": "52px",
         "58px": "58px",
         "62px": "62px",
@@ -151,6 +149,7 @@ module.exports = {
         "954px": "954px",
       },
       width: {
+        hexagon: "calc(100% - 4px)",
         "1/4": "40%",
         "1/335": "33.5%",
         "1/265": "26.5%",
@@ -162,6 +161,9 @@ module.exports = {
       },
       maxWidth: {
         "168px": "168px",
+      },
+      height: {
+        hexagon: "calc(100% - 4px)",
       },
       minHeight: {
         27: "107px",
@@ -178,9 +180,13 @@ module.exports = {
         rectangle: "6/5",
         mobile: "16/5",
       },
-      borderWidth: {},
+      borderWidth: {
+        "0.5px": "0.5px",
+      },
       borderRadius: {
+        "2px": "2px",
         "4px": "4px",
+        "9px": "9px",
         "10px": "10px",
         "20px": "20px",
       },
@@ -194,7 +200,6 @@ module.exports = {
         "5.4px": "5.4px",
         "10.8px": "10.8px",
       },
-
       gridTemplateColumns: {
         main: "1fr auto",
         "2-auto": "repeat(2, auto)",
