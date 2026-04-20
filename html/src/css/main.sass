@@ -180,6 +180,14 @@
     img
       @apply object-contain
     
+  .regular-hexagon
+    @apply relative flex-container w-full
+    &__outter
+      @apply absolute hexagon-outline bg-gray-2 size-full
+    &__inner
+      @apply hexagon-solid bg-hexagon shadow-popup size-hexagon-inner
+
+
   .btn--primary
     @apply flex-container rounded-10px bg-gray-4/40 p-2px
     &__wrapper
@@ -199,9 +207,6 @@
     @apply w-full h-auto flex-container
     img, picture, a
       @apply size-full object-cover
-
-  .side-section
-    @apply w-full flex justify-center
 
   .btn--dropdown
     @apply flex relative flex-col gap-2
@@ -267,10 +272,17 @@
     @apply flex items-center justify-center
 
   .hexagon-outline
-    clip-path: polygon(calc(100% - 18px) 0%, 18px 0%, 0 50%, 3px 50%, 19px 2px,calc(100% - 19px) 2px, calc(100% - 3px) 50%, calc(100% - 19px) calc(100% - 2px), 19px calc(100% - 2px), 3px 50%, 0px 50%, 18px 100%, calc(100% - 18px) 100%, 100% 50%)
+    clip-path: polygon(calc(100% - 18px) 0%, 18px 0%, 0 50%, 2.5px 50%, 19px 2px,calc(100% - 19px) 2px, calc(100% - 2px) 50%, calc(100% - 19px) calc(100% - 2px), 19px calc(100% - 2px), 2.5px 50%, 0px 50%, 18px 100%, calc(100% - 18px) 100%, 100% 50%)
 
   .hexagon-solid
     clip-path: polygon(calc(100% - 18px) 0%, 100% 50%, calc(100% - 18px) 100%, 18px 100%, 0% 50%, 18px 0%)
+
+  @media ( min-width:  1024px)
+    .hexagon-outline
+      clip-path: polygon(calc(100% - 3cqh) 0%, 3cqh 0%, 0 50%, 3px 50%, calc(3cqh + 1.5px) 2px,calc(100% - 3cqh - 1.5px) 2px, calc(100% - 3px) 50%, calc(100% - 3cqh - 1.5px) calc(100% - 2px), calc(3cqh + 1.5px) calc(100% - 2px), 3px 50%, 0px 50%, 3cqh 100%, calc(100% - 3cqh) 100%, 100% 50%)
+    .hexagon-solid
+      clip-path: polygon(calc(100% - 3cqh) 0%, 100% 50%, calc(100% - 3cqh) 100%, 3cqh 100%, 0% 50%, 3cqh 0%)
+
 
   .text-gradient
     @apply bg-clip-text text-transparent bg-repeat

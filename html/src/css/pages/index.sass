@@ -31,3 +31,25 @@
                 @apply text-2xl lg:text-4xl font-extrabold max-lg:text-center
             &_description
                 @apply text-xs lg:text-base font-semibold max-lg:text-center
+
+
+    .tech-section
+        @apply w-full flex-container pt-5 lg:pt-6 lg:bg-tech overflow-visible
+        &__logo
+            @apply max-lg:hidden mb-4 2xl:mb-6
+        &__container
+            @apply grid grid-cols-2 lg:grid-cols-3 max-w-lmd px-5 gap-3
+        &__column
+            @apply flex-container flex-col gap-3 lg:gap-6 w-full
+            .regular-hexagon
+                @apply w-full h-10 sm:h-14 lg:h-20
+            .hexagon-container
+                @apply px-18px sm:px-6 lg:px-10 2xl:px-14 flex items-center gap-2 sm:min-w-70
+                &__icon
+                    @apply text-xl sm:text-3xl lg:text-52px shrink-0
+                &__text
+                    @apply flex items-start flex-col capitalize sm:items-center sm:grow
+                    &_title
+                        @apply text-xs font-semibold line-clamp-1 sm:text-base lg:text-xl lg:font-bold
+                    &_detail
+                        @apply text-8px font-light text-gray-3 line-clamp-1 sm:text-xs lg:text-base
