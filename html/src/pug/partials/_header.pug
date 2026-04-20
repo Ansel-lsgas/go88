@@ -22,47 +22,47 @@ mixin langSwitcher()
         span(class="lang-switcher__option-label") English
 
 header(class="site-header")
-  button#header_trigger(class="site-header__mobile-icon lg:hidden")
-    include ../icons/site_burger.svg
-
-  a(class="site-header__logo" href="#trang_chu")
-    img(src="assets/logo.webp" alt="Logo GO88")
-  
-  div(class="site-header__pseudo lg:hidden")
-
   div(class="site-header__container")
-    nav#header_nav(class="site-header__nav")
-      a(class="site-header__nav-item active" href="#trang_chu")
-        span(class="site-header__nav-item-wrapper")
-          span(class="site-header__nav-item-label") Trang chủ
+    button#header_trigger(class="site-header__mobile-icon lg:hidden")
+      include ../icons/site_burger.svg
 
-      a(class="site-header__nav-item" href="#ve_chung_toi")
-        span(class="site-header__nav-item-wrapper")
-          span(class="site-header__nav-item-label") Chúng tôi
-
-      a(class="site-header__nav-item" href="#tro_choi")
-        span(class="site-header__nav-item-wrapper")
-          span(class="site-header__nav-item-label") Trò chơi
-        
-      //- a(class="site-header__nav-item" href="#quan_tri")
-      //-   span(class="site-header__nav-item-wrapper")
-      //-     span(class="site-header__nav-item-label") Quản Trị
-        
-      //- a(class="site-header__nav-item" href="#huong_dan")
-      //-   span(class="site-header__nav-item-wrapper")
-      //-     span(class="site-header__nav-item-label") Hướng Dẫn
-        
-      //- a(class="site-header__nav-item" href="#tin_tuc")
-      //-   span(class="site-header__nav-item-wrapper")
-      //-     span(class="site-header__nav-item-label") Tin Tức
-        
-
-    a(class="site-header__cta btn--primary" href="#xac-thuc")
-      span(class="btn--primary__wrapper")
-        span(class="btn--primary__inner") Xác Thực Link Chính Hãng
-    +langSwitcher()
+    include ./utils/_site_logo
     
-    form(class="site-header__search hidden" action="#" method="get")
-      span(class="site-header__search-icon")
-        include ../icons/site_search.svg
-      input(class="site-header__search-input" type="text" name="domain" placeholder="Nhập domain.com")
+    div(class="site-header__pseudo lg:hidden")
+
+    div(class="site-header__main")
+      nav#header_nav(class="site-header__nav")
+        a(class="site-header__nav-item active" href="#trang_chu")
+          span(class="site-header__nav-item-wrapper")
+            span(class="site-header__nav-item-label") Trang chủ
+
+        a(class="site-header__nav-item" href="#ve_chung_toi")
+          span(class="site-header__nav-item-wrapper")
+            span(class="site-header__nav-item-label") Chúng tôi
+
+        a(class="site-header__nav-item" href="#tro_choi")
+          span(class="site-header__nav-item-wrapper")
+            span(class="site-header__nav-item-label") Trò chơi
+          
+        //- a(class="site-header__nav-item" href="#quan_tri")
+        //-   span(class="site-header__nav-item-wrapper")
+        //-     span(class="site-header__nav-item-label") Quản Trị
+          
+        //- a(class="site-header__nav-item" href="#huong_dan")
+        //-   span(class="site-header__nav-item-wrapper")
+        //-     span(class="site-header__nav-item-label") Hướng Dẫn
+          
+        //- a(class="site-header__nav-item" href="#tin_tuc")
+        //-   span(class="site-header__nav-item-wrapper")
+        //-     span(class="site-header__nav-item-label") Tin Tức
+          
+
+      a(class="site-header__cta btn--primary" href="#xac-thuc")
+        span(class="btn--primary__wrapper")
+          span(class="btn--primary__inner") Xác Thực Link Chính Hãng
+      +langSwitcher()
+      
+      form(class="site-header__search hidden" action="#" method="get")
+        span(class="site-header__search-icon")
+          include ../icons/site_search.svg
+        input(class="site-header__search-input" type="text" name="domain" placeholder="Nhập domain.com")

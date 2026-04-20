@@ -1,57 +1,94 @@
-mixin footer_link(link = "", text = "")
-  li
-    a(class="site-footer__links_link" href=link)
-      span(class="site-footer__links_link_icon")
-        //- include ../icons/_ic_caret.svg
-      span(class="site-footer__links_link_text")= text
-
 footer(class="site-footer")
-  span(class="site-footer__line")
-  div(class="site-footer__links")
-    div(class="site-footer__links_column")
-      p(class="site-footer__links_title") Cập nhật mới
-      ul(class="site-footer__links_list")
-        +footer_link("#co_gi_moi", "Có gì mới hôm nay?")
-        +footer_link("#huong_dan_in_ve_do", "Hướng dẫn in vé dò")
-        +footer_link("#cach_luu_anh_ve_do", "Cách lưu ảnh vé dò")
-        +footer_link("#huong_dan_ve_thue", "Hướng dẫn về thuế")
+  div(class="site-footer__container")
+    div(class="site-footer__main")
+      div(class="site-footer__brand")
+        include ./utils/_site_logo
+        p(class="site-footer__brand_description")
+          | GO88- Nền tảng giải trí trực tuyến hàng đầu, cung cấp một loạt các trò chơi đa dạng từ sòng bạc, trò chơi trực tuyến đến cá cược thể thao. Với giao diện thân thiện và dịch vụ chuyên nghiệp, Go88 cam kết mang lại trải nghiệm giải trí tuyệt vời cho người chơi.
 
-    div(class="site-footer__links_column")
-      p(class="site-footer__links_title") Kết quả xổ số
-      ul(class="site-footer__links_list")
-        +footer_link("#do_ve_so_online", "Dò vé số online")
-        +footer_link("#tuong_thuat_truc_tiep", "Tường thuật trực tiếp xổ số")
-        +footer_link("#thong_ke_lo", "Thống Kê Lô")
-        +footer_link("#kiem_tra_gan_cuc_dai", "Kiểm tra Gan cực Đại")
-        +footer_link("#thong_ke_tan_suat", "Thống kê tần suất")
+      div(class="site-footer__nav")
+        div(class="site-footer__column")
+          p(class="site-footer__column_title") Pháp lý và tuân thủ
+          ul(class="site-footer__column_list")
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Về chúng tôi
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Điều khoản dịch vụ
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Chính sách bảo mật
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Chính sách nạp & rút
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Chơi có trách nhiệm
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Chính sách KYC/AML
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Miễn trừ trách nhiệm
 
-    div(class="site-footer__links_column")
-      p(class="site-footer__links_title") Công cụ ông địa
-      ul(class="site-footer__links_list")
-        +footer_link("#ai_du_doan", "AI dự đoán")
-        +footer_link("#phan_tich_xac_suat", "Phân tích xác suất")
-        +footer_link("#lich_van_nien", "Lịch Vạn Niên")
-        +footer_link("#giai_ma_giac_mo", "Giải mã giấc mơ")
-        +footer_link("#gieo_que_online", "Gieo quẻ online")
+        div(class="site-footer__column")
+          p(class="site-footer__column_title") Hỗ trợ và xác thực
+          ul(class="site-footer__column_list")
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Support
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") FAQ
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Check link tool
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Trung tâm khiếu nại
 
-    div(class="site-footer__links_column")
-      p(class="site-footer__links_title") Livestream KQXS
-      ul(class="site-footer__links_list")
-        +footer_link("#livestream_mien_nam", "Livestream xổ số Miền Nam")
-        +footer_link("#livestream_mien_bac", "Livestream xổ số Miền Bắc")
-        +footer_link("#livestream_mien_trung", "Livestream xổ số Miền Trung")
-        +footer_link("#livestream_vietlott", "Livestream xổ số Vietlott")
-        +footer_link("#livestream_dien_toan", "Livestream xổ số Điện Toán")
+        div(class="site-footer__column")
+          p(class="site-footer__column_title") Sản phẩm
+          ul(class="site-footer__column_list")
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Tải App Go88
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Slot, Nổ hũ
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Live Casino
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Trạng thái hệ thống
+            li(class="site-footer__item")
+              a(href="#" class="site-footer__link") Kiểm tra MD5
 
-  div(class="site-footer__brand")
-    //- include ./utils/_logo
+        div(class="site-footer__column")
+          p(class="site-footer__column_title") Mạng xã Hội
+          ul(class="site-footer__column_list")
+            li(class="site-footer__item")
+              a(href="mailto:Compliance@Go88.org" class="site-footer__link")
+                span(class="site-footer__link_icon")
+                  include ../icons/footer_mail.svg
+                span(class="site-footer__link_text")  Compliance@Go88.org
+            li(class="site-footer__item")
+              a(href="#fb" class="site-footer__link")
+                span(class="site-footer__link_icon")
+                  include ../icons/footer_fb.svg
+                span(class="site-footer__link_text") Facebook
+            li(class="site-footer__item")
+              a(href="#lk" class="site-footer__link")
+                span(class="site-footer__link_icon")
+                  include ../icons/footer_in.svg
+                span(class="site-footer__link_text") Linked In
+            li(class="site-footer__item")
+              a(href="#ig" class="site-footer__link")
+                span(class="site-footer__link_icon")
+                  include ../icons/footer_ig.svg
+                span(class="site-footer__link_text") Instagram
+            li(class="site-footer__item")
+              a(href="#twitter" class="site-footer__link") 
+                span(class="site-footer__link_icon")
+                  include ../icons/footer_x.svg
+                span(class="site-footer__link_text") Twitter
 
-    div(class="site-footer__brand_contents")
-      p(class="site-footer__brand_contents_title")
-        | cúng ông địa trúng độc đắc
-      nav(class="site-footer__brand_contents_links")
-        a(href="#dieu_khoan") Điều khoản sử dụng
-        span |
-        a(href="#bao_mat") Chính sách bảo mật
-        span |
-        a(href="#cookies") Cookies
+    div(class="site-footer__certification")
+      img(src="assets/partner_1.webp" alt="PAGCOR" )
+      img(src="assets/partner_2.webp" alt="BMM" )
+      img(src="assets/partner_3.webp" alt="iTech" )
+      img(src="assets/partner_4.webp" alt="DMCA" )
+      img(src="assets/partner_5.webp" alt="Gaming" )
+      img(src="assets/partner_6.webp" alt="Support" )
+
+    div(class="site-footer__bottom")
+      p(class="site-footer__copyright") Go88 © 2026. Tất cả quyền được bảo lưu
+      div(class="site-footer__dmca-status")
+        img(src="assets/dmca.webp" alt="DMCA Protected")

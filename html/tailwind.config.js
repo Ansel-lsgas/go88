@@ -64,6 +64,7 @@ module.exports = {
         "btn-2": "0 2px 10px 0 rgba(244, 181, 22, 0.30) inset",
         popup: "0 2px 20px 0 rgba(244, 181, 22, 0.20) inset",
         lang: "0 2px 4px 0 rgba(244, 181, 22, 0.20) inset",
+        scroll: "0 2px 2px 0 rgba(0, 0, 0, 0.15)",
       },
       backgroundImage: {
         golden:
@@ -129,6 +130,7 @@ module.exports = {
         "110px": "110px",
         "122px": "122px",
         "144px": "144px",
+        "152px": "152px",
         "165px": "165px",
         "178px": "178px",
         "210px": "210px",
@@ -137,6 +139,7 @@ module.exports = {
         "300px": "300px",
         "325px": "325px",
         "336px": "336px",
+        "349px": "349px",
         "390px": "390px",
         "414px": "414px",
         "430px": "430px",
