@@ -55,6 +55,7 @@ module.exports = {
           4: "#808080",
         },
         header: "#1A1A1A",
+        "true-red": "#f00"
       },
       boxShadow: {
         nav: "0 2px 10px 0 rgba(244, 181, 22, 0.30) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.15)",

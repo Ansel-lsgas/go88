@@ -61,7 +61,7 @@
         &__slide
             @apply flex-container relative opacity-0
             scale: 0.7
-            transition: scale .5s ease-in-out, transform .3s ease-in-out, opacity .15s ease-in
+            transition: scale 1s ease-out, transform .3s ease-in-out, opacity .2s ease-out
             &.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next
                 opacity: 1
             &.swiper-slide-prev
@@ -71,7 +71,9 @@
             &.swiper-slide-next
                 transform: translateX(-20%)
             &_title
-                @apply absolute top-0 bg-golden text-gradient text-8px lg:text-xl font-bold uppercase
+                @apply absolute top-0 xs:top-[1%] lg:top-0 xl:top-[1%] bg-golden text-gradient text-8px lg:text-xl font-bold uppercase
             &_active-players
-                @apply absolute top-0 text-8px lg:text-base font-light
+                @apply absolute top-[8%] xs:top-[9%] text-8px lg:text-base font-light flex-container gap-1 lg:gap-2
+                &::before
+                    @apply content-[''] size-1 lg:size-2.5 bg-true-red rounded-full block animate-pulse
 

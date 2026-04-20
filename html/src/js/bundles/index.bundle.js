@@ -10653,11 +10653,28 @@ var productionSlider = function productionSlider() {
   wrapper.innerHTML = slides + slides;
   var swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](swiperElement, {
     direction: "horizontal",
-    slidesPerView: "3",
+    slidesPerView: "2",
     spaceBetween: 0,
     centeredSlides: true,
     preventClicks: false,
     preventClicksPropagation: false,
+    breakpoints: {
+      0: {
+        slidesPerView: "1.8"
+      },
+      480: {
+        slidesPerView: "2"
+      },
+      640: {
+        slidesPerView: "3"
+      },
+      1024: {
+        slidesPerView: "2.5"
+      },
+      1120: {
+        slidesPerView: "3"
+      }
+    },
     loop: true,
     speed: 1000,
     autoplay: {
