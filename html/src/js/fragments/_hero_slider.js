@@ -6,11 +6,7 @@ Swiper.use([Autoplay, Pagination]);
 const heroSlider = () => {
   const swiperElement = document.querySelector("#hero_slider");
   if (!swiperElement) return;
-  const wrapper = swiperElement.querySelector(".swiper-wrapper");
-  if (!wrapper) return;
 
-  // Chỉ bật loop khi có đủ slides để tránh Swiper Loop Warning
-  const slideCount = swiperElement.querySelectorAll(".swiper-slide").length;
   const swiper = new Swiper(swiperElement, {
     direction: "horizontal",
     slidesPerView: "auto",

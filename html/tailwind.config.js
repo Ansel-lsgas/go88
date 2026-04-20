@@ -73,11 +73,17 @@ module.exports = {
           "linear-gradient(180deg, rgba(127, 127, 127, 0.20) 0%, rgba(0, 0, 0, 0.20) 54.19%, rgba(244, 181, 22, 0.20) 100%)",
         line: "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #F4B516 50%, rgba(0, 0, 0, 0) 100%)",
         hero: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 71.77%, #000 93.19%), linear-gradient(270deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)",
-        hexagon: "linear-gradient(92deg, rgba(127, 127, 127, 0.20) 0%, rgba(0, 0, 0, 0.20) 54.24%, rgba(244, 181, 22, 0.20) 100.1%)",
+        hexagon:
+          "linear-gradient(92deg, rgba(127, 127, 127, 0.20) 0%, rgba(0, 0, 0, 0.20) 54.24%, rgba(244, 181, 22, 0.20) 100.1%)",
         tech: "radial-gradient(23.07% 59.34% at 50% 40.66%, rgba(244, 181, 22, 0.40) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, #000 23.74%, rgba(0, 0, 0, 0.00) 76.52%)",
         lang: "url('/assets/lang_frame.webp')",
         main: "url('/assets/bg_main.webp')",
         header: "url('/assets/bg_header.webp')",
+        "production-layover-mb":
+          "radial-gradient(55.26% 58.93% at 50% 41.07%, rgba(244, 181, 22, 0.30) 0%, rgba(0, 0, 0, 0.00) 100%)",
+        "production-layover-dt":
+          "radial-gradient(50% 50% at 50% 50%, rgba(244, 181, 22, 0.25) 0%, rgba(0, 0, 0, 0.00) 100%)",
+        "production-bg": "url('/assets/bg_production.webp')",
       },
       screens: {
         mb: "375px",
@@ -93,7 +99,7 @@ module.exports = {
       },
       spacing: {
         "dynamic-nav": "calc(100vh - 80px)",
-        "hexagon-inner": "calc(100% - 4px)", 
+        "hexagon-inner": "calc(100% - 4px)",
         space: "0.5ch",
         lmd: "1480px",
         lmt: "1440px",

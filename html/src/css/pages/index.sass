@@ -53,3 +53,25 @@
                         @apply text-xs font-semibold line-clamp-1 sm:text-base lg:text-xl lg:font-bold
                     &_detail
                         @apply text-8px font-light text-gray-3 line-clamp-1 sm:text-xs lg:text-base
+    
+    .production-section
+        @apply w-full flex-container pt-5 lg:pt-6 max-lg:bg-production-bg bg-production-layover-mb lg:bg-production-layover-dt bg-cover
+        &__container
+            @apply w-full max-w-lmd
+        &__slide
+            @apply flex-container relative opacity-0
+            scale: 0.7
+            transition: scale .5s ease-in-out, transform .3s ease-in-out, opacity .15s ease-in
+            &.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next
+                opacity: 1
+            &.swiper-slide-prev
+                transform: translateX(20%)
+            &.swiper-slide-active
+                scale: 1
+            &.swiper-slide-next
+                transform: translateX(-20%)
+            &_title
+                @apply absolute top-0 bg-golden text-gradient text-8px lg:text-xl font-bold uppercase
+            &_active-players
+                @apply absolute top-0 text-8px lg:text-base font-light
+
